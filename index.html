@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WebRTC Video Call App</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Landing Screen -->
+    <div class="landing-container" id="landing-container">
+        <h1>Video Call</h1>
+        <div class="room-actions">
+            <button id="createRoomBtn">Create Room</button>
+            <input type="text" id="roomIdInput" placeholder="Enter Room ID" autocomplete="off" />
+            <button id="joinRoomBtn">Join Room</button>
+        </div>
+        <div id="createdRoomInfo" style="margin-top:16px; color:#00eaff; display:none;">
+            Share this Room ID: <span id="createdRoomId"></span>
+        </div>
+    </div>
+    
+    <!-- Call Screen -->
+    <div id="call-screen" style="display: none;">
+        <div class="video-container">
+            <video id="local-video" class="video" autoplay muted playsinline></video>
+            <video id="remote-video" class="video" autoplay playsinline></video>
+        </div>
+        <div id="controls">
+            <button id="mute-button">Mute</button>
+            <button id="camera-button">Turn Camera Off</button>
+            <button id="screenshare-button">Start Screen Share</button>
+            <button id="end-call-button">End Call</button>
+        </div>
+        <div id="room-id-display" style="margin-top:12px; color:#00eaff;"></div>
+    </div>
+<script src="https://unpkg.com/peerjs@1.5.2/dist/peerjs.min.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>
